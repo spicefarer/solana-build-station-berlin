@@ -1,0 +1,24 @@
+[package]
+name = "solana-example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+solana-client = "1.15.2"
+solana-sdk = "1.15.2"
+dioxus = { git = "https://github.com/DioxusLabs/dioxus" }
+dioxus-desktop = { git = "https://github.com/DioxusLabs/dioxus" }
+dioxus-tui = { git = "https://github.com/DioxusLabs/dioxus" }
+dioxus-html = { git = "https://github.com/DioxusLabs/dioxus" }
+anyhow = "1.0.69"
+solana-account-decoder = "1.15.2"
+serde = "1.0.152"
+serde_json = "1.0.94"
+spl-associated-token-account = "1.1.2"
+decimal = "2.1.0"
+metaboss = "0.19.0"
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+tokio = "1.26.0"
+futures = "0.3.26"
