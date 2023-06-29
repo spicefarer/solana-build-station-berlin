@@ -19,7 +19,7 @@ impl Cluster {
     fn endpoint(&self) -> &str {
         match self {
             &Cluster::Devnet => "https://api.devnet.solana.com",
-            &Cluster::MainnetBeta => "https://api.mainnet-beta.solana.com",
+            &Cluster::MainnetBeta => "https://mainnet-beta.solflare.network/",
             &Cluster::Testnet => "https://api.testnet.solana.com",
         }
     }
@@ -55,7 +55,7 @@ pub async fn get_nfts(pubkey: &str, cluster: Cluster) -> Result<Vec<Nft>> {
         )?
         .value;
     let mut futs = Vec::new();
-    for RpcKeyedAccount { pubkey: _, account } in accounts.iter().take(5) {
+    for RpcKeyedAccount { pubkey: _, account } in accounts.iter().take(25) {
         let UiAccountData::Json(parsed_account) = &account.data else { continue };
         let Some(mint) = parsed_account.parsed["info"]["mint"]
             .as_str() else {
